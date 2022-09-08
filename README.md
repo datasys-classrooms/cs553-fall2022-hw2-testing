@@ -8,7 +8,7 @@
 ### How to run test scripts
 In order to run the test scripts you will need to clone this repo in your homework repo:
 ```
-$ cd <your homework repo>
+$ cd <your homework repo directory>
 $ git clone https://github.com/datasys-classrooms/cs553-fall2022-hw2-testing.git
 ```
 
