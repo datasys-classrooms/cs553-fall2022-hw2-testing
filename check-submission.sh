@@ -29,13 +29,13 @@ TEST1()
 TEST2()
 {
     echo -n "2. Check to see if the report is uploaded ...         "
-    if [ ! -f report.pdf ]
+    if [ ! -f hw2-report.pdf ]
     then
         echo "failed!"
         STATUS=2
     fi
 
-    local rc=$(ls -l report.pdf | tr -s ' ' | cut -d ' ' -f5)
+    local rc=$(ls -l hw2-report.pdf | tr -s ' ' | cut -d ' ' -f5)
     if [ $rc -ne 3653 ]
     then
         echo "passed!" 
