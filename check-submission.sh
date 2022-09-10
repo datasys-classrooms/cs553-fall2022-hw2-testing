@@ -15,7 +15,6 @@ TEST1()
         echo "$MSG failed!"
         STATUS=2
     else
-        cat README.md
         local rc=$(cat README.md | grep "please-write" | wc -l)
         if [ $rc -eq 0 ]
         then
