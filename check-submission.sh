@@ -11,19 +11,19 @@ STATUS=0
 
 TEST1()
 {
-    echo -n "1. Check to see if the README is updated ...          "
+    MSG="1. Check to see if the README is updated ...         "
     if [ ! -f README.md ]
     then
-        echo "failed!"
+        echo "$MSG failed!"
         STATUS=2
     else
         cat README.md
         local rc=$(cat README.md | grep "please-write" | wc -l)
         if [ $rc -eq 0 ]
         then
-            echo "passed!"
+            echo "$MSG passed!"
         else
-            echo "failed!"
+            echo "$MSG failed!"
             STATUS=1
         fi
     fi
@@ -31,18 +31,18 @@ TEST1()
 
 TEST2()
 {
-    echo -n "2. Check to see if the report is uploaded ...         "
+    MSG="2. Check to see if the report is uploaded ...        "
     if [ ! -f hw2-report.pdf ]
     then
-        echo "failed!"
+        echo "$MSG failed!"
         STATUS=2
     else
         local rc=$(ls -l hw2-report.pdf | tr -s ' ' | cut -d ' ' -f5)
         if [ $rc -ne 3653 ]
         then
-            echo "passed!" 
+            echo "$MSG passed!" 
         else
-            echo "failed!"
+            echo "$MSG failed!"
             STATUS=1
         fi
     fi
