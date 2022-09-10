@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 echoerr()
 {
     echo "$@" >&2
