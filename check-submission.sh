@@ -14,15 +14,15 @@ TEST1()
     then
         echo "failed!"
         STATUS=2
-    fi
-
-    local rc=$(cat README.md | grep "please-write" | wc -l)
-    if [ $rc -eq 0 ]
-    then
-        echo "passed!"
     else
-        echo "failed!"
-        STATUS=1
+        local rc=$(cat README.md | grep "please-write" | wc -l)
+        if [ $rc -eq 0 ]
+        then
+            echo "passed!"
+        else
+            echo "failed!"
+            STATUS=1
+        fi
     fi
 }
 
@@ -33,15 +33,15 @@ TEST2()
     then
         echo "failed!"
         STATUS=2
-    fi
-
-    local rc=$(ls -l hw2-report.pdf | tr -s ' ' | cut -d ' ' -f5)
-    if [ $rc -ne 3653 ]
-    then
-        echo "passed!" 
     else
-        echo "failed!"
-        STATUS=1
+        local rc=$(ls -l hw2-report.pdf | tr -s ' ' | cut -d ' ' -f5)
+        if [ $rc -ne 3653 ]
+        then
+            echo "passed!" 
+        else
+            echo "failed!"
+            STATUS=1
+        fi
     fi
 }
 
